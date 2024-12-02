@@ -11,7 +11,7 @@ fatal()
 [ -z $APP_VERSION ] && fatal "no version!"
 
 make APP_VERSION=$APP_VERSION all -j$(nproc)
-./config.sh ./tools/bootloader_bk7238_uart1_v1.0.14.bin ./output/bk7238_${APP_VERSION}.bin ./output
+./config.sh ./tools/bootloader_bk7238_uart2_v1.0.14.bin ./output/bk7238_${APP_VERSION}.bin ./output
 ./tools/beken_packager ./output/config.json
 mv all_2M.1220.bin ./output/OpenBK7238_QIO_${APP_VERSION}.bin
 mv bk7238_${APP_VERSION}_uart_2M.1220.bin ./output/OpenBK7238_UA_${APP_VERSION}.bin
