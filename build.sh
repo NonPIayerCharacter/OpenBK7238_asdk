@@ -10,7 +10,7 @@ fatal()
 
 [ -z $APP_VERSION ] && fatal "no version!"
 
-make APP_VERSION=$APP_VERSION all
+make APP_VERSION=$APP_VERSION all -j$(nproc)
 ./config.sh ./tools/bootloader_bk7238_uart1_v1.0.14.bin ./output/bk7238_${APP_VERSION}.bin ./output
 ./tools/beken_packager ./output/config.json
 mv all_2M.1220.bin ./output/OpenBK7238_QIO_${APP_VERSION}.bin
